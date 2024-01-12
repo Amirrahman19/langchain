@@ -17,7 +17,7 @@ vectordb_file_path = "faiss_index"
 
 def create_vector_db():
     # Load data from FAQ sheet
-    loader = CSVLoader(file_path='codebasics_faqs.csv', source_column="prompt")
+    loader = CSVLoader(file_path='cordlife_faqs.csv', source_column="prompt")
     data = loader.load()
 
     # Create a FAISS instance for vector database from 'data'
@@ -59,4 +59,4 @@ def get_qa_chain():
 if __name__ == "__main__":
     create_vector_db()
     chain = get_qa_chain()
-    print(chain("Do you have javascript course?"))
+    print(chain("How does one enrol and how much does it cost?"))
