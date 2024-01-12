@@ -56,6 +56,34 @@ def get_qa_chain():
 
     return chain
 
+import pandas as pd
+
+raw = pd.read_csv('cordlife_faqs1.csv')
+
+lookup = {}
+for a, b, *_ in raw.values:
+    lookup[a] = b
+
+from sentence_transformers import SentenceTransformer, util
+
+sentences = list(raw['prompt'].values)
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+sentences_embeddings = [model.encode(s, convert_to_tensor=True) for s in sentences]
+
+def search(q, THRESHOLD=0.65):
+    q_embedding = model.encode(q, convert_to_tensor=True)
+    out = []
+    for sentence, sentence_embedding in zip(sentences, sentences_embeddings):
+        score = util.pytorch_cos_sim(q_embedding, sentence_embedding).item()
+        out.append((sentence, score))
+    out.sort(key=lambda x:-x[-1])
+    if out[0][1] < THRESHOLD:
+        return ['I don\'t know']
+    top = out[:3]
+    return [(qns, lookup[qns], score) for qns,score in top]
+
+chain = search
+
 if __name__ == "__main__":
     create_vector_db()
     chain = get_qa_chain()
