@@ -41,7 +41,7 @@ for a, b, *_ in raw.values:
 from sentence_transformers import SentenceTransformer, util
 
 sentences = list(raw['prompt'].values)
-model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
 sentences_embeddings = [model.encode(s, convert_to_tensor=True) for s in sentences]
 
 def search(q, THRESHOLD=0.65):
