@@ -19,14 +19,20 @@ def format(response):
   except:
      return response[0]
 
+# if question:
+#     chain = get_qa_chain()
+#     response = chain(question)
+
+#     st.header("Answer")
+#     st.write(format(response))
+
+
 if question:
     chain = get_qa_chain()
-    response = chain(question)
+    response = chain({'prompt': question, 'response': ''})  # Pass an empty response initially
 
     st.header("Answer")
     st.write(format(response))
-
-
 
 
 
