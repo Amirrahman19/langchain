@@ -129,3 +129,16 @@ INFO:root:Search Query: {'prompt': 'apa itu sel induk darah tali pusat?', 'respo
 INFO:root:Search Query: {'prompt': 'bagaimana cara penyimpanan darah tali pusat?', 'response': ''}
 INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 INFO:sentence_transformers.SentenceTransformer:Use pytorch device: cpu
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+INFO:root:Search Query: {'prompt': 'what is cord blood?', 'response': ''}
+INFO:root:Search Query: {'prompt': 'what are cord blood stem cells?', 'response': ''}
+INFO:root:Search Result: [('What are cord blood stem cells?', 'Cord blood stem cells are also known as Haematopoietic Stem Cells (HSCs), which are responsible for replenishing blood and regenerating the immune system. These stem cells can be found within the umbilical cord following the birth of a baby and have the unique ability to differentiate into various cell types found in blood as depicted in the diagram below:     \r\nRed blood cells - which transport oxygen\r\nWhite blood cells - which produce antibodies and fight bacteria\r\nPlatelets - which assist in blood clotting                                        ', 0.9999227523803711), ('What can cord blood stem cells do?', 'Cord blood stem cells can:\r\n\r\nReplace and regenerate damaged or diseased bone marrow.\r\nTreat blood related cancers, solid tumours and immunodeficiency disorders.\r\nCorrect genetic defects (sibling/allogeneic transplantation).\r\nPotentially be used for cellular therapy and regenerative medicine.erative medicine.', 0.9421665072441101), ('What are some of the diseases that can be treated using cord blood stem cells?', 'Cord blood stem cells are currently being used as a standard form of treatment for over 80 diseases such as leukaemia, lymphoma, thalassemia and neuroblastoma, just to name a few. For the full list of treatable diseases: \r\nhttps://www.cordlife.com/sg/treatable-diseases\r\n', 0.8322830200195312)]
+INFO:root:Search Query: {'prompt': 'apa itu sel induk darah tali pusat?', 'response': ''}
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: hkunlp/instructor-large
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device: cpu
